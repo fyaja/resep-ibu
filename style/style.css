@@ -1,0 +1,15 @@
+:root{
+  --text: #21171b;
+  --background: #f6e9eb;
+  --primary: #f97781;
+  --secondary: #ffb3ba;
+  --accent: #e2989f;
+}
+
+li {
+  list-style: none;
+}
+
+a{
+  text-decoration: none;
+}
