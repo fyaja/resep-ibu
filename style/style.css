@@ -126,6 +126,14 @@ main{
   color: var(--background);
   background-color: var(--primary);
   align-self: flex-start;
+  border: 2px solid var(--primary);
+
+  transition: all 0.15s;
+}
+
+.home a:hover{
+  color: var(--background);
+  background-color: var(--accent);
 }
 
 /* articles */
@@ -156,6 +164,21 @@ article img{
 
 article ul, article ol{
   margin-left: 1rem;
+}
+
+article a{
+  font-size: 1rem;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  color: var(--background);
+  background-color: var(--primary);
+  align-self: flex-start;
+
+  transition: transform 0.15s;
+}
+
+article a:hover{
+  transform: translateY(-3px);
 }
 
 /* aside */
@@ -233,5 +256,9 @@ article ul, article ol{
 @media screen and (max-width: 568px){
   main{
     flex-direction: column;
+  }
+
+  .author-profile{
+    margin-top: 0;
   }
 }
