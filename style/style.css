@@ -5,14 +5,13 @@
   --secondary: #ffb3ba;
   --accent: #e2989f;
 
-  --font: 'Roboto', arial;
+  --font: "Montserrat", sans-serif;
   --font-2: 'Roboto Mono', monospace;
 }
 
-h1, h2, p, a{
+h1, h2, h3, p, a{
   font-family: var(--font);
   color: var(--text);
-  font-weight: 400;
 }
 
 *{
@@ -21,7 +20,7 @@ h1, h2, p, a{
   box-sizing: border-box;
 }
 
-li {
+li{
   list-style: none;
 }
 
@@ -41,22 +40,30 @@ body{
 
 /* header */
 header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 1px solid var(--text);
+  background-color: var(--background);
+  z-index: 1;
+}
+
+nav{
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
   height: 60px;
-  border-bottom: 1px solid var(--text);
 }
 
-header .logo{
+nav .logo a{
   font-family: var(--font-2);
   font-weight: bold;
   font-size: 1.2rem;
   letter-spacing: 3px;
 }
 
-header nav ul{
+nav ul{
   display: flex;
   gap: 20px;
 }
@@ -79,26 +86,73 @@ nav ul li a:hover{
   font-size: 1.2rem;
 }
 
+/* home */
+.home{
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.home h1{
+  font-weight: bold;
+  font-size: 4rem;
+  line-height: 1em;
+}
+
+.home h1 span{
+  color: var(--primary);
+}
+
+.home p{
+  font-size: 1rem;
+}
+
+.home a{
+  font-size: 1rem;
+  padding: 0.8em 1.5em;
+  border-radius: 5px;
+  color: var(--background);
+  background-color: var(--primary);
+  align-self: flex-start;
+}
+
+
 @media screen and (max-width: 768px) {
-  header nav ul{
+  nav ul{
     display: none;
     position: absolute;
-    top: 60px;
+    top: 60.5px;
     left: 0;
     right: 0;
     flex-direction: column;
     gap: 0;
+    background-color: var(--background);
   }
 
   .show{
     display: flex;
   }
 
-  header nav ul li{
-    padding: 1rem 1rem;
-    border-bottom: 1px solid var(--text);
+  .margin-top{
+    margin-top: 156px;
   }
 
+  nav ul li{
+    border-bottom: 1px solid var(--text);
+  }
+  
+  
+  nav ul li a{
+    padding: 1rem 1rem;
+    display: block;
+  }
+  
+  nav ul li a:hover{
+    color: var(--background);
+    background-color: var(--primary);
+  }
+  
   .hamburger{
     display: block;
   }

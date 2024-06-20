@@ -7,8 +7,7 @@
   <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
@@ -21,25 +20,33 @@
 </head>
 
 <body>
-  <header class="container">
-    <div class="logo">Resep Ibu.</div>
-    <nav>
+  <header>
+    <nav class="container">
+      <div class="logo">
+        <a href="#">Resep Ibu.</a>
+      </div>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Resep Ayam Goreng</a></li>
-        <li><a href="#">Resep Nasi Goreng</a></li>
-        <li><a href="#">Resep Lainnya</a></li>
+        <li><a href="#beranda">Beranda</a></li>
+        <li><a href="#resep-terbaru">Resep Terbaru</a></li>
+        <li><a href="#resep-favorit">Resep Favorit</a></li>
       </ul>
+      <div class="hamburger">
+        <i class="ri-menu-3-fill"></i>
+      </div>
     </nav>
-    <div class="hamburger">
-      <i class="ri-menu-3-fill"></i>
-    </div>
   </header>
   <main class="container">
-    <div class="article">
-      <article></article>
-      <article></article>
-      <article></article>
+    <div class="content-left">
+      <section id="beranda" class="home">
+        <h1>Selamat Datang di <span>Resep Ibu</span></h1>
+        <p>
+          Selamat datang di Resep Ibu, tempat terbaik untuk menemukan berbagai resep masakan yang lezat dan mudah dibuat
+          di rumah.
+          Anda akan menemukan inspirasi
+          dan panduan lengkap untuk membuat hidangan yang sempurna.
+        </p>
+        <a href="#resep-favorit" class="cta">Lihat Resep Favorit</a>
+      </section>
     </div>
     <aside></aside>
   </main>
