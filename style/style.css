@@ -3,7 +3,6 @@
   --background: #f6e9eb;
   --primary: #f97781;
   --secondary: #ffb3ba;
-  --accent: #e2989f;
 
   --font: "Montserrat", sans-serif;
   --font-2: 'Roboto Mono', monospace;
@@ -12,6 +11,10 @@
 h1, h2, h3, p, li, a{
   font-family: var(--font);
   color: var(--text);
+}
+
+html{
+  scroll-behavior: smooth;
 }
 
 *{
@@ -121,23 +124,26 @@ main{
 
 .home a{
   font-size: 1rem;
+  font-weight: bold;
   padding: 0.8em 1.5em;
   border-radius: 5px;
   color: var(--background);
   background-color: var(--primary);
   align-self: flex-start;
   border: 2px solid var(--primary);
-
+  
   transition: all 0.15s;
 }
 
 .home a:hover{
-  color: var(--background);
-  background-color: var(--accent);
+  color: var(--text);
+  background-color: var(--secondary);
+  border: 2px solid var(--text);
 }
 
 /* articles */
 .articles{
+  margin-top: 150px;
   padding-top: 80px;
   display: flex;
   flex-direction: column;
@@ -146,18 +152,22 @@ main{
 
 .articles h2{
   font-size: 2rem;
+  color: var(--primary);
   text-align: center;
 }
 
 .articles article{
   display: flex;
   flex-direction: column;
+  padding: 1.2rem;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
   gap: 1rem;
 }
 
 article img{
   width: 100%;
-  height: 200px;
+  max-height: 200px;
   object-fit: cover;
   object-position: center;
 }
@@ -188,9 +198,9 @@ article a:hover{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  padding: 20px;
+  padding: 1.2rem;
   align-self: flex-start;
-  background-color: var(--accent);
+  background-color: var(--secondary);
 }
 
 .author-profile img{
@@ -210,9 +220,136 @@ article a:hover{
   color: var(--background);
 }
 
+/* resep-favorit */
+#resep-favorit{
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#resep-favorit h2{
+  color: var(--primary);
+  text-align: center;
+  font-size: 2rem;
+}
+
+#resep-favorit > p{
+  color: var(--text);
+  text-align: center;
+  font-size: 1rem;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card-container {
+  overflow-x: hidden;
+  flex: 1;
+  width: 0;
+}
+
+.next, .previous {
+  cursor: pointer;
+  font-size: 2rem;
+  padding: 10px 12px;
+  border: none;
+  color: var(--primary);
+  background-color: var(--secondary);
+  border-radius: 50%;
+  transition: all 0.15s;
+}
+
+.next:hover, .previous:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
+}
+
+.wrapper {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - (1.5rem * (2 - 1))) / 2);
+  grid-gap: 1.5rem;
+  position: relative;
+  left: 0;
+  background-color: var(--background);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: white; 
+  border-radius: 8px;
+}
+
+.card img {
+  width: 100%;
+  height: 100px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  object-fit: cover;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.card a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.15s;
+}
+
+.card a:hover {
+  color: var(--secondary);
+}
+
+/* footer */
+footer{
+  margin-top: 150px;
+  padding: 1.2rem;
+  background-color: var(--secondary);
+}
+
+footer a{
+  font-family: var(--font-2);
+  font-size: 1rem;
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  color: var(--text);
+  opacity: 0.5;
+  transition: opacity 0.15s;
+}
+
+footer a:hover{
+  opacity: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .wrapper{
+    grid-auto-columns: calc((100% - (1.5rem * 0)) / 1);
+  }
+}
+
 @media screen and (max-width: 768px) {
   html{
-    font-size: 90%;
+    font-size: 80%;
+  }
+
+  .card, .next{
+    margin-left: 4px;
   }
 
   nav ul{
@@ -258,7 +395,11 @@ article a:hover{
     flex-direction: column;
   }
 
-  .author-profile{
+  .articles{
     margin-top: 0;
+  }
+
+  .author-profile{
+    margin-top: 80px;
   }
 }
